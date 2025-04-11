@@ -1,10 +1,19 @@
 import { ChevronRight } from "lucide-react"
 import HeroContent from "../components/HeroContent"
+import { motion } from "framer-motion"
+import { fade } from "@/utils/animation"
+import TrustedBy from "@/components/TrustedBy"
 
 const Hero = () => {
     return (
-        <div className="w-full">
-            <button className="mt-24 mb-6 relative group overflow-hidden rounded-full p-[1.2px]">
+        <div
+            className="w-full"
+        >
+            <motion.button
+                initial={fade.initial}
+                animate={fade.animate}
+                transition={{ ...fade.transition, delay: 0.75 }}
+                className="mt-24 mb-6 relative group overflow-hidden rounded-full p-[1.2px]">
 
                 <div className="absolute inset-0 bg-gradient-to-r from-[var(--primary-color)] via-[var(--secondary-color)] to-pink-500 rounded-full bg-[length:200%_100%] animate-gradient-x" />
 
@@ -17,9 +26,11 @@ const Hero = () => {
                     </span>
                     <ChevronRight size={15} className="ml-2" />
                 </div>
-            </button>
+            </motion.button>
 
             <HeroContent />
+
+            <TrustedBy />
         </div>
     )
 }
