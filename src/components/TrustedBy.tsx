@@ -16,10 +16,10 @@ const TrustedBy = () => {
     ]
 
     return (
-        <div className="w-full md:pb-12 pb-5 md:pt-0 pt-12">
+        <div className="w-full md:pb-12 pb-5 md:pt-0 pt-24">
             <motion.h1
                 initial={{ ...fadeUp.initial, y: 20 }}
-                transition={{ ...fadeUp.transition, delay: 0.2 }}
+                transition={{ ...fadeUp.transition, delay: 0.6 }}
                 viewport={fadeUp.viewport}
                 whileInView={fadeUp.whileInView}
                 className="w-full text-center md:text-base text-sm text-neutral-200"
@@ -29,7 +29,7 @@ const TrustedBy = () => {
 
             <motion.div
                 initial={{ ...fadeUp.initial, y: 20 }}
-                transition={{ ...fadeUp.transition, delay: 0.3 }}
+                transition={{ ...fadeUp.transition, delay: 0.7 }}
                 viewport={fadeUp.viewport}
                 whileInView={fadeUp.whileInView}
                 className="flex items-center gap-2 mt-6">

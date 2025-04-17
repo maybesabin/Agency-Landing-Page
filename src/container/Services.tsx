@@ -42,7 +42,7 @@ const Services = () => {
     ];
 
     return (
-        <div className="flex flex-col items-start gap-4 md:pt-24 pt-12 w-full">
+        <div className="flex flex-col items-start gap-4 pt-24 w-full">
             <motion.h3
                 initial={fadeDown.initial}
                 transition={fadeDown.transition}
