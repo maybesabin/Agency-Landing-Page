@@ -4,13 +4,15 @@ import stripe from "../assets/stripe.png"
 import huawei from "../assets/huawei.png"
 import uber from "../assets/uber.png"
 import zoom from "../assets/zoom.png"
+import eBay from "../assets/eBay.png"
+import amazon from "../assets/amazon.png"
 import { motion } from "framer-motion"
 import { fadeUp } from "@/utils/animation";
 
 const TrustedBy = () => {
 
     const companies = [
-        nike, stripe, huawei, uber, zoom
+        nike, stripe, huawei, uber, amazon, eBay, zoom
     ]
 
     return (
@@ -25,17 +27,22 @@ const TrustedBy = () => {
                 Trusted by 30+ businesses
             </motion.h1>
 
-            <div className="flex items-center gap-2 mt-6">
+            <motion.div
+                initial={{ ...fadeUp.initial, y: 20 }}
+                transition={{ ...fadeUp.transition, delay: 0.3 }}
+                viewport={fadeUp.viewport}
+                whileInView={fadeUp.whileInView}
+                className="flex items-center gap-2 mt-6">
                 <Marquee pauseOnHover gradient gradientColor="black">
                     {companies.map((item, idx) => (
                         <img
-                            className="md:h-20 md:w-20 h-16 w-16 object-contain md:mx-12 mx-6 opacity-50 hover:opacity-100 transition-all"
+                            className="md:h-20 md:w-20 h-16 w-16 object-contain xl:mx-24 lg:mx-8 mx-6 opacity-50 hover:opacity-100 transition-all"
                             key={idx}
                             src={item}
                         />
                     ))}
                 </Marquee>
-            </div>
+            </motion.div>
         </div>
     )
 }

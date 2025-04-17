@@ -1,11 +1,13 @@
 import Card from "@/components/Card"
-import { Clock, Layers, SearchCheck, ShieldCheck, Sparkles, UserCheck } from "lucide-react"
+import { ChevronDown, ChevronUp, Clock, Layers, SearchCheck, ShieldCheck, Sparkles, UserCheck } from "lucide-react"
 import { motion } from "framer-motion"
 import { fade, fadeDown, fadeUp } from "@/utils/animation";
+import { useState } from "react";
 import AnimatedText from "@/components/AnimatedText";
 
 const Services = () => {
 
+    const [showMore, setShowMore] = useState(false);
     const cards = [
         {
             icon: <Layers />,
@@ -56,10 +58,10 @@ const Services = () => {
                 whileInView={fadeUp.whileInView}
                 className="relative flex items-center gap-4 -mt-5"
             >
-                <span className="font-medium md:text-5xl text-2xl">
-                    <span>Exceeding&nbsp;</span>
+                <div className="font-medium md:text-5xl text-2xl">
+                    <span>Exceeding</span>&nbsp;
                     <AnimatedText text="Expectations" className="" delay={0.2} />
-                </span>
+                </div>
                 <motion.svg
                     initial={fade.initial}
                     transition={{ ...fade.transition, delay: 1 }}
@@ -80,8 +82,8 @@ const Services = () => {
                 We're not just another agency; we're your path to exceptional web projects.
             </motion.p>
 
-            {/* Cards */}
-            <div className="lg:grid xl:grid-cols-3 lg:grid-cols-2 flex flex-wrap gap-6 mt-6 w-full">
+            {/* Cards for larger screens*/}
+            <div className="lg:grid xl:grid-cols-3 lg:grid-cols-2 hidden gap-6 mt-6 w-full">
                 {cards.map((item, idx) => (
                     <motion.div
                         initial={{ ...fadeUp.initial, filter: "blur(20px)" }}
@@ -99,6 +101,52 @@ const Services = () => {
                     </motion.div>
                 ))}
             </div>
+
+            {/* Cards for smaller screens*/}
+            <div className="lg:hidden flex flex-wrap gap-6 mt-6">
+                {cards.slice(0, showMore ? cards.length : 3).map((item, idx) => (
+                    <motion.div
+                        initial={{ ...fadeUp.initial, filter: "blur(20px)" }}
+                        transition={{ ...fadeUp.transition, delay: 0.25 * idx }}
+                        viewport={fadeUp.viewport}
+                        whileInView={fadeUp.whileInView}
+                        key={idx}
+                        className="w-full"
+                    >
+                        <Card
+                            icon={item.icon}
+                            title={item.title}
+                            description={item.description}
+                        />
+                    </motion.div>
+                ))}
+            </div>
+
+            <motion.div
+                initial={fadeUp.initial}
+                transition={{ ...fadeUp.transition, delay: 0.1 }}
+                viewport={fadeUp.viewport}
+                whileInView={fadeUp.whileInView}
+                onClick={() => setShowMore(!showMore)}
+                className="w-full lg:hidden flex justify-center">
+                <button className="flex items-center gap-1 text-xs mt-6 rounded-full bg-gradient-to-tr from-[var(--primary-color)] via-[var(--primary-color)] px-3 py-1.5">
+                    {!showMore ?
+                        <>
+                            <span>
+                                Show More
+                            </span>
+                            <ChevronDown size={'15px'} />
+                        </>
+                        :
+                        <>
+                            <span>
+                                Show Less
+                            </span>
+                            <ChevronUp size={'15px'} />
+                        </>
+                    }
+                </button>
+            </motion.div>
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar"
 import Hero from "./container/Hero";
+import Pricing from "./container/Pricing";
 import Services from "./container/Services";
 import { cn } from "./lib/utils";
 
@@ -24,6 +25,7 @@ const App = () => {
         <Navbar />
         <Hero />
         <Services />
+        <Pricing />
       </div>
     </div>
   )
