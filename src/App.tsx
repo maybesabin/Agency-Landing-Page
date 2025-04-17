@@ -1,5 +1,6 @@
 import Navbar from "./components/Navbar"
 import Hero from "./container/Hero";
+import Services from "./container/Services";
 import { cn } from "./lib/utils";
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
       <div className="lg:w-[80rem] w-full relative">
         <Navbar />
         <Hero />
+        <Services />
       </div>
     </div>
   )

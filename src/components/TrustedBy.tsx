@@ -26,7 +26,7 @@ const TrustedBy = () => {
             </motion.h1>
 
             <div className="flex items-center gap-2 mt-6">
-                <Marquee autoFill pauseOnHover gradient gradientColor="black">
+                <Marquee pauseOnHover gradient gradientColor="black">
                     {companies.map((item, idx) => (
                         <img
                             className="md:h-20 md:w-20 h-16 w-16 object-contain md:mx-12 mx-6 opacity-50 hover:opacity-100 transition-all"
