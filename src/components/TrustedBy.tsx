@@ -16,7 +16,7 @@ const TrustedBy = () => {
     ]
 
     return (
-        <div className="w-full md:pb-12 pb-5">
+        <div className="w-full md:pb-12 pb-5 md:pt-0 pt-12">
             <motion.h1
                 initial={{ ...fadeUp.initial, y: 20 }}
                 transition={{ ...fadeUp.transition, delay: 0.2 }}

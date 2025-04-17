@@ -6,7 +6,7 @@ import AnimatedText from "./AnimatedText"
 
 const HeroContent = () => {
     return (
-        <div className="w-full min-h-[70vh] flex flex-col items-start gap-6">
+        <div className="w-full md:min-h-[70vh] flex flex-col items-start gap-6">
             <motion.h1
                 initial={fadeUp.initial}
                 animate={fadeUp.animate}
