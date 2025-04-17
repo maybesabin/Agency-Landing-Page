@@ -42,7 +42,7 @@ const Services = () => {
     ];
 
     return (
-        <div className="flex flex-col items-start gap-4 pt-24 w-full">
+        <div className="flex flex-col items-start gap-4 md:pt-24 pt-12 w-full">
             <motion.h3
                 initial={fadeDown.initial}
                 transition={fadeDown.transition}
@@ -107,7 +107,7 @@ const Services = () => {
                 {cards.slice(0, showMore ? cards.length : 3).map((item, idx) => (
                     <motion.div
                         initial={{ ...fadeUp.initial, filter: "blur(20px)" }}
-                        transition={{ ...fadeUp.transition, delay: 0.25 * idx }}
+                        transition={{ ...fadeUp.transition, delay: 0.1 * idx }}
                         viewport={fadeUp.viewport}
                         whileInView={fadeUp.whileInView}
                         key={idx}

@@ -26,7 +26,7 @@ const Pricing = () => {
     ];
 
     return (
-        <div className="w-full pt-24 pb-24 flex flex-col items-start gap-4">
+        <div className="w-full md:pt-24 pt-12 flex flex-col items-start gap-4">
             <motion.h3
                 initial={fadeDown.initial}
                 transition={fadeDown.transition}
@@ -70,7 +70,7 @@ const Pricing = () => {
                 {plans.map((item, idx) => (
                     <motion.div
                         initial={fadeUp.initial}
-                        transition={{ ...fadeUp.transition, delay: 0.5 * (idx + 1) }}
+                        transition={{ ...fadeUp.transition, delay: 0.1 * (idx + 1) }}
                         viewport={fadeUp.viewport}
                         whileInView={fadeUp.whileInView}
                         key={idx}
