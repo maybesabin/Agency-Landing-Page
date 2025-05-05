@@ -1,7 +1,9 @@
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar"
 import Hero from "./container/Hero";
 import Pricing from "./container/Pricing";
 import Services from "./container/Services";
+import Testimonials from "./container/Testimonials";
 import { cn } from "./lib/utils";
 
 const App = () => {
@@ -26,6 +28,8 @@ const App = () => {
         <Hero />
         <Services />
         <Pricing />
+        <Testimonials />
+        <Footer />
       </div>
     </div>
   )

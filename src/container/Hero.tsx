@@ -22,7 +22,7 @@ const Hero = () => {
                     <hr className="-ml-1 h-4 w-[1px] shrink-0 bg-gray-300" />
                     &nbsp;&nbsp;
                     <span className="bg-gradient-to-r from-[var(--primary-color)] via-[var(--secondary-color)] to-pink-500 bg-[length:200%_100%] animate-gradient-x bg-clip-text text-transparent">
-                        Launching Soon
+                        10+ Years of Service
                     </span>
                     <ChevronRight size={15} className="ml-2" />
                 </div>
